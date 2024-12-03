@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Character Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Random Character Generator</h1>
+
+  <button onclick="generateCharacter()">Generate Character</button>
+
+  <div id="result">
+    <!-- The result will be displayed here -->
+  </div>
+
+  <script>
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function generateCharacter() {
+      // Ascendancy options
+      var ascendancies = ["Gemling Legionnaire (Mercenary)","Witch Hunter (Mercenary)", "Acolyte of Chanula (Monk)","Invoker (Monk)", "Deadeye (Ranger)", "Pathfinder (Ranger)","Chronomancer (Sorceress)", "Stormweaver (Sorceress)", "Titan (Warrior)", "Warbringer (Warrior)" ,"Blood Mage (Witch)" ,"Infernalist (Witch)"];
+      // Skills options
+      var skills = ["Ancestral Warrior Totem", "Arc", "Archmage", "Armour Breaker", "Armour Piercing Rounds", "Ball Lightning", "Barrage", "Bind Spectre", "Blazing Lance", "Bone Cage", "Bone Offering", "Boneshatter", "Bonestorm", "Bow Shot", "Cast on Melee Kill", "Cast on Melee Stun", "Cast while Channelling", "Charged Staff", "Cluster Grenade", "Cold Snap", "Comet", "Contagion", "Dark Effigy", "Despair", "Detonate Dead", "Detonating Arrow", "Discipline", "Earthquake", "Earthshatter", "Electrocuting Arrow", "Ember Fusillade", "Enfeeble", "Escape Shot", "Essence Drain", "Explosive Grenade", "Explosive Shot", "Eye of Winter", "Falling Thunder", "Ferocious Roar", "Fireball", "Firestorm", "Flame Wall", "Flameblast", "Flammability", "Flash Grenade", "Flicker Strike", "Fragmentation Rounds", "Freezing Mark", "Freezing Salvo", "Frost Bomb", "Frost Wall", "Frostbolt", "Frozen Locus", "Furious Slam", "Galvanic Shards", "Gas Arrow", "Gas Grenade", "Glacial Bolt", "Glacial Cascade", "Hammer of the Gods", "Hand of Chayula", "Hexblast", "High Velocity Rounds", "Ice Nova", "Ice Shards", "Ice Shot", "Ice Spear", "Ice Strike", "Impale", "Incendiary Shot", "Infernal Cry", "Killing Palm", "Leap Slam", "Lightning Arrow", "Lightning Bolt", "Lightning Conduit", "Lightning Rod", "Lightning Storm", "Lightning Warp", "Malice", "Mana Tempest", "Mantra of Destruction", "Maul", "Oil Grenade", "Orb of Storms", "Pain Offering", "Perfect Strike", "Permafrost Bolts", "Poisonburst Arrow", "Power Offering", "Profane Ritual", "Puncture", "Rain of Arrows", "Raise Shield", "Raise Zombie", "Rampage", "Rapid Assault", "Rapid Shot", "Resonating Shield", "Rolling Magma", "Rolling Slam", "Sandstorm Swipe", "Seismic Cry", "Shattering Palm", "Shield Charge", "Shield Wall", "Shockchain Arrow", "Shockwave Totem", "Sigil of Power", "Siphoning Strike", "Skeletal Arsonist", "Skeletal Brute", "Skeletal Cleric", "Skeletal Frost Mage", "Skeletal Reaver", "Skeletal Sniper", "Skeletal Storm Mage", "Skeletal Warrior", "Snipe", "Sniper's Mark", "Solar Orb", "Sorcery Ward", "Spark", "Spearfield", "Spiral Volley", "Staggering Palm", "Stampede", "Storm Spear", "Storm Wave", "Stormblast Bolts", "Stormcaller Arrow", "Summon Rhoa Mount", "Summon Wolf", "Sunder", "Supercharged Slam", "Tempest Bell", "Tempest Flurry", "Temporal Chains", "Tornado Shot", "Tornado", "Toxic Growth", "Unearth", "Vaulting Impact", "Vine Arrow", "Volcanic Fissure", "Volcano", "Voltaic Mark", "Vulnerability", "Wave of Frost", "Whirling Assault", "Whirling Slash", "Wind Blast"]
+      // Randomly choose an ascendancy
+      var ascendancyIndex = getRandomNumber(0, ascendancies.length - 1);
+      var chosenAscendancy = ascendancies[ascendancyIndex];
+      // Randomly choose three skills
+      var chosenSkills = [];
+      for (var i = 0; i < 3; ++i) {
+        var skillIndex = getRandomNumber(0, skills.length - 1);
+        chosenSkills.push(skills[skillIndex]);
+      }
+      // Display the results
+      var resultElement = document.getElementById("result");
+      resultElement.innerHTML = "<p><strong>Chosen Ascendancy:</strong></p><p>" + chosenAscendancy + "</p>";
+      resultElement.innerHTML += "<p><strong>Chosen Skills:</strong></p><ul>";
+      for (var j = 0; j < chosenSkills.length; ++j) {
+        resultElement.innerHTML += "<li>" + chosenSkills[j] + "</li>";
+      }
+      resultElement.innerHTML += "</ul>";
+    }
+  </script>
+</body>
+
+</html>
