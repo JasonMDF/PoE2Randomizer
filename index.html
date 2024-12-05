@@ -45,7 +45,7 @@
       // Display the results
       var resultElement = document.getElementById("result");
       resultElement.innerHTML = "<p><strong>Chosen Ascendancy:</strong></p><p>" + chosenAscendancy + "</p>";
-      resultElement.innerHTML += "<p><strong>Chosen Skill:</strong></p><ul>";
+      resultElement.innerHTML = "<p><strong>Chosen Skill:</strong></p><ul>";
       for (var j = 0; j < chosenSkills.length; ++j) {
         resultElement.innerHTML += "<li>" + chosenSkills[j] + "</li>";
       }
