@@ -9,6 +9,8 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
+      background-color: #333;
+      color: #eee ;
       margin: 20px;
     }
   </style>
@@ -43,13 +45,10 @@
         chosenSkills.push(skills[skillIndex]);
       }
       // Display the results
-      var resultElement = document.getElementById("result");
-      resultElement.innerHTML = "<p><strong>Chosen Ascendancy:</strong></p><p>" + chosenAscendancy + "</p>";
-      resultElement.innerHTML = "<p><strong>Chosen Skill:</strong></p><ul>";
-      for (var j = 0; j < chosenSkills.length; ++j) {
-        resultElement.innerHTML += "<li>" + chosenSkills[j] + "</li>";
-      }
-      resultElement.innerHTML += "</ul>";
+
+  var resultElement = document.getElementById("result");
+  resultElement.innerHTML = "<p><strong>Chosen Ascendancy:</strong> " + chosenAscendancy + "</p>" +
+                            "<p><strong>Chosen Skill:</strong> " + chosenSkills[0] + "</p>"; 
     }
   </script>
 </body>
