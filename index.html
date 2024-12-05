@@ -38,14 +38,14 @@
       var chosenAscendancy = ascendancies[ascendancyIndex];
       // Randomly choose three skills
       var chosenSkills = [];
-      for (var i = 0; i < 2; ++i) {
+      for (var i = 0; i < 1; ++i) {
         var skillIndex = getRandomNumber(0, skills.length - 1);
         chosenSkills.push(skills[skillIndex]);
       }
       // Display the results
       var resultElement = document.getElementById("result");
       resultElement.innerHTML = "<p><strong>Chosen Ascendancy:</strong></p><p>" + chosenAscendancy + "</p>";
-      resultElement.innerHTML += "<p><strong>Chosen Skills:</strong></p><ul>";
+      resultElement.innerHTML += "<p><strong>Chosen Skill:</strong></p><ul>";
       for (var j = 0; j < chosenSkills.length; ++j) {
         resultElement.innerHTML += "<li>" + chosenSkills[j] + "</li>";
       }
